@@ -1,0 +1,206 @@
+    html,
+    body {
+        font-family: sans-serif;
+        color: #444444;
+    }
+    
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    ul,
+    ol {
+        list-style-type: none;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 20px 35px;
+        animation: transitionIn 1s ease-in;
+    }
+    
+    header ul {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    
+    header ul li {
+        margin: 10px;
+        color: #ffc451;
+        cursor: pointer;
+        padding: 10px;
+    }
+    
+    header ul li:hover {
+        background-color: #ffc451;
+        transition: 0.3s all linear;
+    }
+    
+    header ul #important {
+        color: #444;
+        background-color: #ffc451;
+    }
+    
+    header .icon {
+        position: absolute;
+        top: 2%;
+        left: 1%;
+    }
+    
+    header .icon i {
+        font-size: 35px;
+        color: #ffc451;
+    }
+    
+    @keyframes transitionIn {
+        from {
+            opacity: 0;
+            transform: translateY(-80deg);
+        }
+        to {
+            opacity: 1;
+            transform: rotateX(2);
+        }
+    }
+    
+    section {
+        background-color: #fff;
+        padding: 40px 0;
+    }
+    
+    input,
+    label,
+    .sidebar {
+        display: none;
+    }
+    
+    .sidebar {
+        position: fixed;
+        right: 0;
+        width: 80%;
+        height: 100%;
+        background: #333;
+        left: -100%;
+    }
+    
+    .sidebar ul {
+        list-style-type: none;
+    }
+    
+    .sidebar ul li a {
+        text-align: center;
+        font-size: 25px;
+        color: #fff;
+    }
+    
+    .sidebar ul li ul li a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 65px;
+        font-size: 25px;
+        color: white;
+        padding: 0 0 0 40px;
+        transition: .5s all linear;
+        position: relative;
+        right: 275px;
+    }
+    
+    .sidebar ul li ul li:hover a {
+        color: red;
+    }
+    
+    #check {
+        display: none;
+    }
+    
+    label #btn {
+        position: absolute;
+        cursor: pointer;
+        background-color: transparent;
+        border-radius: 6px;
+        left: 90%;
+        top: 1%;
+        font-size: 25px;
+        padding: 6px 12px;
+    }
+    
+    label #cancel {
+        position: absolute;
+        z-index: 1111;
+        left: -80%;
+        top: 1%;
+        font-size: 25px;
+        padding: 6px 12px;
+        color: #333;
+        cursor: pointer;
+    }
+    
+    #check:checked~.sidebar {
+        left: 100px;
+    }
+    
+    #check:checked~label #btn {
+        opacity: 1;
+        pointer-events: none;
+    }
+    
+    #check:checked~label #cancel {
+        left: 1%;
+    }
+    
+    @media only screen and (min-width:200px) and (max-width:920px) {
+        html,
+        body {
+            overflow-x: hidden;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+        }
+         ::-webkit-scrollbar {
+            display: none;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            row-gap: 20px;
+            padding: 20px 45px;
+        }
+        header ul {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            background-color: #f3f3fa;
+        }
+        section {
+            padding: 20px;
+        }
+        input,
+        label,
+        .sidebar {
+            display: block;
+        }
+        #check:checked~.sidebar {
+            left: 60px;
+            bottom: -70px;
+        }
+        #check:checked~label #cancel {
+            top: 3%;
+            left: 7%;
+        }
+    }
