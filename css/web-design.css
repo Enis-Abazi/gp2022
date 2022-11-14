@@ -147,6 +147,86 @@ header .none-menu {
     display: none;
 }
 
+.sidebar {
+    position: absolute;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    background: #333;
+    left: -100%;
+    top: 130px;
+    height: 100vh;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li a {
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+}
+
+.sidebar ul li ul li a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 25px;
+    color: white;
+    padding: 0 0 0 40px;
+    transition: .5s all linear;
+    position: relative;
+    right: 200px;
+}
+
+.sidebar ul li ul li:hover a {
+    color: #facd74;
+    transition: 0.3s ease-in;
+}
+
+#check {
+    display: none;
+    position: relative;
+}
+
+label #btn {
+    position: absolute;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 6px;
+    left: 90%;
+    top: 1%;
+    font-size: 25px;
+    padding: 6px 12px;
+}
+
+label #cancel {
+    position: absolute;
+    z-index: 1111;
+    left: -80%;
+    top: 1%;
+    font-size: 25px;
+    padding: 6px 12px;
+    color: #333;
+    cursor: pointer;
+}
+
+#check:checked~.sidebar {
+    left: 100px;
+}
+
+#check:checked~label #btn {
+    opacity: 1;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#check:checked~label #cancel {
+    left: 1%;
+}
+
 .blog {
     position: absolute;
     top: 50%;
@@ -379,4 +459,305 @@ footer .important {
 
 footer .myName {
     color: #ffc451;
+}
+
+@media only screen and (max-width:600px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    * {
+        padding: 0;
+        margin: 0;
+    }
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    header {
+        padding: 20px;
+        margin: 0;
+        height: 160vh;
+    }
+    header::before {
+        top: 10%;
+    }
+    header .lists-flex {
+        display: none;
+    }
+    header .none-menu {
+        display: block;
+    }
+    label #btn {
+        left: 78%;
+        top: 2%;
+    }
+    .sidebar ul li ul li a {
+        right: 0;
+        top: 50px;
+        color: #222222;
+        width: 80%;
+    }
+    #check:checked~.sidebar {
+        left: 35px;
+        bottom: -70px;
+        background: white;
+        height: 80vh;
+        z-index: 1;
+    }
+    #check:checked~.blog {
+        display: none;
+    }
+    #check:checked~label #cancel {
+        top: 4.5%;
+        left: 80%;
+        font-size: 30px;
+        color: #fff;
+    }
+    .sidebar ul li ul li:hover a {
+        color: #333;
+        transition: 0.3s ease-in;
+        background: #facd74;
+    }
+    #firstList {
+        background: #facd74;
+        color: #333;
+    }
+    .blog {
+        top: 90%;
+    }
+    .blog .row {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .info {
+        padding: 20px;
+    }
+    .info .row {
+        flex-direction: column;
+    }
+    .info .row .col {
+        align-self: unset;
+        padding: 10px 0 10px 0;
+    }
+    .bright {
+        padding: 20px;
+    }
+    .bright .row {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    footer .footer-top {
+        padding: 20px;
+    }
+    .footer-top .row {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    footer .row .col input {
+        width: 97%;
+    }
+    footer .footer-bottom {
+        padding: 20px;
+    }
+}
+
+@media only screen and (min-width:601px) and (max-width:820px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    * {
+        padding: 0;
+        margin: 0;
+    }
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    header {
+        padding: 20px 0 20px 0;
+        height: 100vh;
+    }
+    header .lists-flex {
+        display: none;
+    }
+    header .none-menu {
+        display: block;
+    }
+    label #btn {
+        top: 2%;
+    }
+    #check:checked~.sidebar {
+        left: 35px;
+        bottom: -70px;
+        width: 90%;
+        z-index: 1;
+        background-color: #fff;
+    }
+    #check:checked~label #cancel {
+        top: 12%;
+        left: 12%;
+        font-size: 30px;
+        color: #333;
+    }
+    .sidebar ul li ul li a {
+        right: 10px;
+        width: 70%;
+        color: #333;
+    }
+    .sidebar ul li ul li:hover a {
+        color: #333;
+        transition: 0.3s ease-in;
+        background: #facd74;
+    }
+    #firstList {
+        background: #facd74;
+        color: #333;
+    }
+    .blog {
+        top: 60%;
+    }
+    .blog .row {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .info,
+    .bright {
+        padding: 30px;
+    }
+    .info .row,
+    .bright .row {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .info .row .col {
+        align-self: unset;
+    }
+    header .none-menu a {
+        margin: 0 auto;
+    }
+    header .none-menu {
+        padding: 0 20px 0 0;
+    }
+    header .header-btn a {
+        margin: 0 auto;
+    }
+    footer .footer-top {
+        padding: 50px;
+    }
+    footer .row {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
+
+@media only screen and (min-width:821px) and (max-width:920px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    * {
+        padding: 0;
+        margin: 0;
+    }
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    label #btn {
+        top: 2%;
+    }
+    header {
+        padding: 20px 0 20px 0;
+        height: 110vh;
+    }
+    header .lists-flex {
+        display: none;
+    }
+    header .none-menu {
+        display: block;
+    }
+    header .header-btn a {
+        margin: 0 auto;
+    }
+    .sidebar ul li ul li a {
+        right: 0;
+        width: 90%;
+        color: #333;
+    }
+    #check:checked~.sidebar {
+        z-index: 1;
+        background-color: #fff;
+    }
+    .sidebar ul li ul li:hover a {
+        color: #333;
+        transition: 0.3s ease-in;
+        background: #facd74;
+    }
+    #firstList {
+        background: #facd74;
+        color: #333;
+    }
+    #check:checked~label #cancel {
+        top: 11%;
+        left: 11%;
+    }
+    .blog {
+        top: 60%;
+    }
+    .blog .row {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .info,
+    .bright {
+        padding: 50px;
+    }
+    footer .footer-top {
+        padding: 50px;
+    }
+    footer .row {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
+
+@media only screen and (min-width:921px) and (max-width:1080px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    * {
+        padding: 0;
+        margin: 0;
+    }
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    .blog .row {
+        column-gap: unset;
+    }
+    .info,
+    .bright {
+        padding: 100px;
+    }
+    footer .footer-top {
+        padding: 50px;
+    }
+}
+
+@media only screen and (min-width:1024px) and (max-width:1240px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    * {
+        padding: 0;
+        margin: 0;
+    }
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    .info,
+    .bright {
+        padding: 125px;
+    }
 }

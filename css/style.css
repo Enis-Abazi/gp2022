@@ -997,7 +997,7 @@ footer .myName {
     header {
         padding: 20px;
         margin: 0;
-        height: 175vh;
+        height: 200vh;
     }
     header::before {
         top: 10%;
@@ -1046,7 +1046,7 @@ footer .myName {
         margin: 0 auto;
     }
     .blog {
-        top: 100%;
+        top: 110%;
     }
     .blog .row {
         flex-direction: column !important;
@@ -1460,6 +1460,20 @@ footer .myName {
         top: 50px;
         left: 0;
         text-align: end;
+    }
+}
+
+@media only screen and (min-width:1241px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    * {
+        padding: 0;
+        margin: 0;
+    }
+     ::-webkit-scrollbar {
+        display: none;
     }
 }
 
