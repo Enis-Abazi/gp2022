@@ -586,6 +586,20 @@ i {
     position: relative;
 }
 
+.quote::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.quote .container {
+    position: relative !important;
+}
+
 .quote .center {
     padding: 100px 0 100px 0;
     text-align: center;
@@ -621,7 +635,7 @@ i {
 
 .quote .center .icons i {
     font-size: 13px;
-    color: #444;
+    color: rgb(190, 190, 190);
 }
 
 .quote .center .icons i:nth-child(1) {
